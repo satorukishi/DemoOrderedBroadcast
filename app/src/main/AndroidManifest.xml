@@ -16,6 +16,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--enabled=true e exported=false são os valores default-->
+        <receiver android:name=".MeuReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <!--A prioridade 1 é a prioridade menos baixa-->
+            <intent-filter android:priority="1">
+                <!--Poderia ser apenas MeuOrderedBroadcast, mas por padrão, começar com o nome do package-->
+                <action android:name="com.satoru.kishi.demoorderedbroadcast.MeuOrderedBroadcast"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".MeuOutroReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter android:priority="2">
+                <action android:name="com.satoru.kishi.demoorderedbroadcast.MeuOutroReceiver"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
