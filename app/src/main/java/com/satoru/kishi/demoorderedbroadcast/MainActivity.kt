@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //region:
         var filter = IntentFilter()
         filter.addAction(Intent.ACTION_POWER_CONNECTED)
         filter.addAction(Intent.ACTION_POWER_DISCONNECTED)
@@ -31,6 +32,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
         registerReceiver(receiver, filter)
+
+
 
         // É possível utilizar Lambda expression aqui porque a interface OnClickListener só tem um método
         btEnviar.setOnClickListener {
